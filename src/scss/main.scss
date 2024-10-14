@@ -1,3 +1,5 @@
+/** @format */
+
 // !Components File
 @use "components/global-rules";
 
@@ -5,6 +7,11 @@
 @use "layouts/header";
 @use "layouts/landing";
 @use "layouts/footer";
+@use "layouts/services";
+@use "layouts/about";
+@use "layouts/why";
+@use "layouts/subscribe";
+@use "layouts/team";
 
 // !Utilities File
 @use "utilities/colors" as *;
@@ -12,3 +19,10 @@
 @use "utilities/animations";
 @use "utilities/functions";
 @use "utilities/mixins";
+
+.container {
+  @media (min-width: 1200px) {
+    padding-right: 30px;
+    padding-right: 30px;
+  }
+}

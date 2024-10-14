@@ -1,0 +1,87 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.services1 {
+  padding: 100px 15px 80px;
+
+  .service {
+    display: block;
+    text-align: left;
+    border-radius: 6px;
+    box-shadow: $services-shadow;
+    width: calc(33% - 20px);
+    margin: 10px;
+    transition: $transition9;
+
+    @media (max-width: 992px) {
+      width: calc(50% - 20px);
+      margin: 10px;
+    }
+
+    @media (max-width: 767px) {
+      width: calc(100% - 10px);
+      margin: 5px;
+    }
+
+    img {
+      width: 50px !important;
+      border-radius: 4px;
+      transition: $transition6;
+      filter: brightness(0) saturate(100%) invert(59%) sepia(85%)
+        saturate(3196%) hue-rotate(325deg) brightness(98%) contrast(103%);
+      mix-blend-mode: multiply;
+    }
+
+    h3 {
+      font: {
+        size: 20px;
+        weight: 650;
+      }
+    }
+
+    p {
+      font: {
+        size: 17px;
+        weight: 400;
+      }
+      line-height: 1.6;
+      color: $font-color;
+    }
+
+    a {
+      display: block;
+      color: $main-color;
+      cursor: default;
+      margin: 0;
+      font: {
+        size: 16px;
+        weight: 600;
+      }
+
+      svg {
+        padding-right: 10px;
+        transition: $transition6;
+      }
+
+      span {
+        cursor: pointer;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(8px);
+        }
+      }
+    }
+
+    &:hover {
+      transform: translateY(-15px);
+
+      img {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
