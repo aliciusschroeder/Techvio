@@ -1,0 +1,122 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.blog {
+  padding: 100px 0;
+  background-color: $bg-color;
+
+  .figure {
+    background-color: white;
+    box-shadow: $services-shadow;
+    width: calc(33% - 20px);
+    margin: 10px;
+    padding: 0;
+    border-radius: 6px;
+
+    @media (max-width: 992px) {
+      width: calc(50% - 20px);
+      margin: 10px;
+    }
+
+    @media (max-width: 767px) {
+      width: calc(100% - 10px);
+      margin: 5px;
+    }
+
+    .img {
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        transition: $transition3;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .data {
+      padding: 15px 25px;
+
+      .author {
+        font: {
+          size: 16px;
+          weight: 550;
+        }
+        svg {
+          color: $main-color;
+          padding-right: 5px;
+          font-size: 15px;
+
+          &:first-of-type {
+            border: 1px solid $main-color;
+            border-radius: 50%;
+            padding: 2px;
+            width: 18px;
+            height: 18px;
+            margin-right: 4px;
+          }
+
+          &:last-of-type {
+            margin-left: 20px;
+          }
+        }
+      }
+
+      h3 {
+        font: {
+          size: 23px;
+          weight: 700;
+        }
+        line-height: 1.6;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: $transition3;
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+
+      p {
+        font: {
+          size: 18px;
+          weight: 400;
+        }
+        line-height: 1.6;
+        color: $font-color;
+      }
+
+      a {
+        display: block;
+        color: $main-color;
+        cursor: default;
+        margin: 0;
+        font: {
+          size: 16px;
+          weight: 600;
+        }
+
+        svg {
+          padding-right: 10px;
+          transition: $transition6;
+        }
+
+        span {
+          cursor: pointer;
+        }
+
+        &:hover {
+          svg {
+            transform: translateX(8px);
+          }
+        }
+      }
+    }
+  }
+}

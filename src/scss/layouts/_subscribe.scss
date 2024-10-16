@@ -97,15 +97,14 @@
   p {
     padding-left: 210px;
     padding-right: 210px;
+    font: {
+      size: 20px;
+      weight: 450;
+    }
 
     @media (max-width: 1200px) {
       padding-left: 0px;
       padding-right: 0px;
-    }
-
-    font: {
-      size: 20px;
-      weight: 450;
     }
   }
 
