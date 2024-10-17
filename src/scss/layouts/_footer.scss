@@ -62,8 +62,15 @@ footer {
 
           &::placeholder {
             color: $header-color;
+            transition: $transition6;
             font: {
               weight: 550;
+            }
+          }
+
+          &:focus {
+            &::placeholder {
+              opacity: 0;
             }
           }
         }
@@ -85,6 +92,12 @@ footer {
 
           &:hover {
             background-color: $title-color;
+          }
+        }
+
+        @media (max-width: 767px) {
+          padding: {
+            top: 20px;
           }
         }
       }
@@ -136,6 +149,12 @@ footer {
       font: {
         size: 21px;
         weight: 600;
+      }
+
+      @media (max-width: 767px) {
+        padding: {
+          top: 20px;
+        }
       }
     }
 
@@ -201,7 +220,12 @@ footer {
         }
       }
     }
+
+    @media (max-width: 767px) {
+      padding: 50px 0 40px;
+    }
   }
+
   .copyright {
     padding: 40px 0 20px;
     font: {
@@ -228,7 +252,16 @@ footer {
             right: 10px;
           }
         }
+
+        @media (max-width: 767px) {
+          float: none;
+        }
       }
+    }
+
+    @media (max-width: 767px) {
+      float: none;
+      text-align: center;
     }
   }
 }

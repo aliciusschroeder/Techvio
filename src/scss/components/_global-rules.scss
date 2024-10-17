@@ -1,3 +1,5 @@
+/** @format */
+
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
 
@@ -11,7 +13,7 @@ html {
   scroll-behavior: smooth;
 
   body {
-    font-family: 'Dosis', sans-serif;
+    font-family: "Dosis", sans-serif;
     user-select: none;
 
     a {
@@ -23,6 +25,31 @@ html {
       list-style-type: none;
       padding: 0;
       margin: 0;
+    }
+
+    .head {
+      padding: {
+        top: 50px;
+        bottom: 30px;
+      }
+      text-align: center;
+      h2 {
+        color: $title-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font: {
+          size: 16px;
+          weight: 700;
+        }
+      }
+
+      p {
+        font: {
+          size: 40px;
+          weight: 800;
+        }
+        color: $header-color;
+      }
     }
   }
 }

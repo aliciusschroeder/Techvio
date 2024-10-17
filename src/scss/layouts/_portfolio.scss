@@ -1,0 +1,180 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.portfolio {
+  padding: 30px 0 100px;
+  background-color: $bg-color;
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+
+    button {
+      background-color: white;
+      padding: 15px 25px;
+      border-radius: 4px;
+      transition: $transition3;
+      border: none;
+      outline: none;
+      color: black;
+      box-shadow: 0px 5px 15px 0px rgb(94, 94, 94, 0.15);
+      font: {
+        size: 16px;
+        weight: 600;
+      }
+      margin: {
+        left: 8px;
+        right: 8px;
+        top: 20px;
+        bottom: 30px;
+      }
+
+      @media (max-width: 767px) {
+        margin: {
+          top: 8px;
+          bottom: 8px;
+        }
+      }
+
+      &.active {
+        background-color: $main-color;
+        color: white;
+      }
+
+      &:hover:not(.active) {
+        background-color: #7c68ee9c;
+        color: white;
+      }
+    }
+  }
+
+  .data {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      .sumbnail {
+        bottom: 2%;
+      }
+    }
+
+    img {
+      width: 100%;
+      margin-top: 25px;
+      border-radius: 6px;
+      cursor: pointer;
+
+      @media (max-width: 767px) {
+        margin: {
+          top: 12px;
+        }
+      }
+    }
+
+    .sumbnail {
+      width: 90%;
+      position: absolute;
+      z-index: 2;
+      left: 5%;
+      bottom: -20px;
+      padding: 15px 20px;
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+      border-radius: 5px;
+      background-color: #ffffff;
+      transition: all $transition3 ease-out 0s;
+
+      p {
+        font: {
+          size: 15px;
+          weight: 700;
+        }
+        color: $main-color;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-15px);
+        transition: all $transition4;
+        margin-bottom: 8px;
+      }
+
+      .tit {
+        font: {
+          size: 18px;
+          weight: 700;
+        }
+        color: #1b1b1b;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(15px);
+        transition: all $transition4;
+        margin-top: 5px;
+
+        &:hover {
+          color: $main-color;
+        }
+      }
+
+      .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: auto;
+        right: 0;
+        color: #fff;
+        height: 100%;
+        width: 16%;
+        padding: 20px;
+        font-size: 20px;
+        overflow: hidden;
+        line-height: normal;
+        background-color: #7b68ee;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out 0s;
+        transition-delay: 0.2s;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          right: 0px;
+          transform: translateY(-50%);
+          background-color: $main-color;
+          color: white;
+          padding: 33px 25px;
+          height: 100%;
+          border-radius: 0 6px 6px 0;
+        }
+      }
+    }
+
+    &:hover {
+      .sumbnail {
+        bottom: 10px;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      p,
+      .tit {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+        transition-delay: $transition3;
+      }
+
+      .arrow {
+        transform: translateX(0);
+        visibility: visible;
+      }
+    }
+  }
+}

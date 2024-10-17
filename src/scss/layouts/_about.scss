@@ -57,7 +57,7 @@
         .line {
           display: block;
           width: 100%;
-          height: 6px;
+          height: 7px;
           background-color: $skill-progress;
           border-radius: 8px;
           margin-bottom: 15px;
@@ -67,27 +67,54 @@
             display: block;
             height: 100% !important;
             background-color: $main-color;
+            transition: $transition20;
+            border-radius: 8px;
+            width: 0;
           }
         }
       }
     }
 
     button {
+      position: relative;
       background-color: $main-color;
       color: white;
       padding: 15px 36px;
       border-radius: 5px;
+      box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+      z-index: 1;
+      overflow: hidden;
       font: {
         size: 17px;
         weight: 600;
       }
-      transition: $transition6;
+      transition: $transition4;
       margin-top: 20px;
       border: none;
       outline: none;
 
       a {
         color: white;
+      }
+
+      span {
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        display: block;
+        border-radius: 30px;
+        background-color: $button-hover;
+        transform: translate(-50%, -50%);
+        transition: width $transition5 ease-in-out,
+          height $transition5 ease-in-out;
+      }
+
+      &:hover {
+        span {
+          height: 500px;
+          width: 200%;
+        }
       }
     }
   }

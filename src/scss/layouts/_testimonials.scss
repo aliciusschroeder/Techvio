@@ -1,0 +1,139 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+// Testimonials section
+.testimonials {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.single-testimonial {
+  position: relative;
+  padding: 35px 20px;
+  border-radius: 5px;
+  background-color: $testimonial-bg;
+
+  .testimonial-content {
+    text-align: center;
+    margin-bottom: 25px;
+
+    p {
+      color: $font-color;
+      font-size: 17px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+  }
+
+  .rating-box {
+    margin-bottom: 12px;
+
+    ul li {
+      display: inline-block;
+      margin-right: 0;
+
+      svg {
+        color: $star-color;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .avatar {
+    margin: 0 auto;
+    margin-bottom: 15px;
+
+    img {
+      width: 90px !important;
+      border-radius: 50%;
+      border: 5px solid $border-color;
+      border-left-color: $main-color;
+      border-bottom-color: $main-color;
+      margin: 0 auto;
+    }
+  }
+
+  .testimonial-bio {
+    text-align: center;
+
+    .bio-info {
+      h3 {
+        color: $font-color;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+
+      span {
+        color: $main-color;
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+      }
+    }
+  }
+}
+
+// Owl slider customization
+.testimonial-slider.owl-theme {
+  .owl-nav {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    margin-top: 0;
+
+    [class*="owl-"] {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      background-color: #fff;
+      transition: 0.4s;
+      color: $font-color;
+      font-size: 18px;
+      width: 50px;
+      height: 45px;
+      line-height: 50px;
+      padding: 0;
+      margin: 0;
+
+      &.owl-next {
+        left: auto;
+        right: 10px;
+      }
+
+      &:hover {
+        color: $main-color;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .owl-dots {
+    margin-top: 30px;
+    margin-bottom: 0;
+
+    .owl-dot span {
+      width: 10px;
+      height: 10px;
+      border-radius: 30px;
+      background-color: #ccc;
+      transition: 0.4s;
+      margin: 0 4px;
+
+      &:hover,
+      &.active {
+        background-color: $star-color;
+      }
+    }
+  }
+
+  &:hover .owl-nav {
+    opacity: 1;
+    visibility: visible;
+  }
+}

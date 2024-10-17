@@ -1,3 +1,5 @@
+/** @format */
+
 import gulp from "gulp";
 import concat from "gulp-concat";
 import postcss from "gulp-postcss";
@@ -299,10 +301,10 @@ gulp.task("watch", function () {
   gulp.watch("src/pug/**/*.pug", gulp.series("pug"));
   gulp.watch("src/scss/**/*.scss", gulp.series("styles"));
   gulp.watch("src/js/**/*.js", gulp.series("scripts"));
-  gulp.watch(
-    "src/assets/images/**/*.{jpg,jpeg,png,gif,svg}",
-    gulp.series("images")
-  );
+  // gulp.watch(
+  //   "src/assets/images/**/*.{jpg,jpeg,png,gif,svg}",
+  //   gulp.series("images")
+  // );
   gulp.watch(paths.videos.src, gulp.series("videos"));
   gulp.watch(paths.jQuery.src, gulp.series("jQuery"));
   gulp.watch(paths.bootstrapCss.src, gulp.series("bootstrapCSS"));

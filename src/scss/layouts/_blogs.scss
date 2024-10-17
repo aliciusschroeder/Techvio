@@ -4,7 +4,7 @@
 @use "../utilities/times" as *;
 
 .blog {
-  padding: 100px 0;
+  padding: 30px 0 100px;
   background-color: $bg-color;
 
   .figure {
@@ -47,6 +47,7 @@
         font: {
           size: 16px;
           weight: 550;
+          family: "Catamaran", serif;
         }
         svg {
           color: $main-color;

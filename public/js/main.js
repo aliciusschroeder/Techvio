@@ -1,2 +1,2 @@
-
+var serves=document.querySelector(".about-company"),allServes=document.querySelectorAll(".analyt .line span"),flag=!0,stats=(window.addEventListener("scroll",function(){window.scrollY>=serves.offsetTop-250&&flag&&(allServes.forEach(function(t){t.style.width=t.dataset.prog}),flag=!1)}),document.getElementById("subscribe")),number=document.querySelectorAll(".subscribe .timer .number"),start=!1;function startCount(t){var e=t.dataset.goal,n=setInterval(function(){t.textContent++,t.textContent==e&&clearInterval(n)},5e3/e)}window.addEventListener("scroll",function(){window.scrollY>=stats.offsetTop-450&&(start||number.forEach(function(t){return startCount(t)}),start=!0)});
 //# sourceMappingURL=../../sourcemaps/main.js.map

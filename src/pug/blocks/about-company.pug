@@ -10,17 +10,19 @@ section.about-company.py-100
             p.flex-between IT Consulting
               span 90%
             span.line
-              span.data-prog(style="width: 90%")
+              span(data-prog="90%")
           .analyt
             p.flex-between Cloud Solutions
               span 75%
             span.line
-              span.data-prog(style="width: 75%")
+              span(data-prog="75%")
           .analyt
             p.flex-between Managed IT Service
               span 85%
             span.line
-              span.data-prog(style="width: 85%")
-        button: a(href="#") Learn More
+              span(data-prog="85%")
+        button.default-btn
+          a(href="about.html") Learn More
+          span
       .col-lg-6.col-md-12.photo
         div: img(src="assets/images/about.jpg" alt="About Company")

@@ -44,6 +44,7 @@
       li {
         color: $header-color;
         cursor: pointer;
+        transition: $transition4;
 
         span {
           position: relative;

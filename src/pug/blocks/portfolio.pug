@@ -1,0 +1,23 @@
+include ../components/variable
+
+section.portfolio
+  block header
+    .head
+      h2 Recent Works
+      p Our Portfolio
+  .container
+    .buttons
+      button.all.filter.active(data-filter=".all") All
+      button.branding.filter(data-filter=".branding") Branding
+      button.application.filter(data-filter=".application") Application
+      button.webdesign.filter(data-filter=".webdesign") Web Design
+      button.photography.filter(data-filter=".photography") Photography
+    .protfolio-container
+      .row
+        each item, i in portfolioItems
+          .col-lg-4.col-md-6.col-sm-12.data(class= `${item.class}`)
+            img(src=`assets/images/portfolio/portfolio-${i + 1}.jpg`, alt="")
+            .sumbnail
+              p #{item.category} | #{item.type}
+              a(href="portfolio-details.html").tit #{item.title}
+              a(href="portfolio-details.html").arrow: i.fa-solid.fa-arrow-right-long
