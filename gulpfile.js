@@ -149,13 +149,11 @@ gulp.task("css", function () {
 
 // !Task to minify and concatenate JavaScript files
 gulp.task("scripts", function () {
-  return (
-    gulp
-      .src(paths.scripts.src)
-      //! .pipe(uglify()) // *Minify JS
-      .pipe(gulp.dest(paths.scripts.dest)) // *Output minified files to destination
-      .pipe(livereload())
-  );
+  return gulp
+    .src(paths.scripts.src)
+    .pipe(uglify()) // *Minify JS
+    .pipe(gulp.dest(paths.scripts.dest)) // *Output minified files to destination
+    .pipe(livereload());
   // TODO .pipe(notify("Scripts task complete"));
 });
 

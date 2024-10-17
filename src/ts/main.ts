@@ -1,5 +1,19 @@
 /** @format */
 
+// !Sticky header
+window.addEventListener("scroll", () => {
+  const header = document.querySelector("header") as HTMLElement;
+  const img = document.querySelector("header img") as HTMLImageElement;
+
+  if (window.scrollY >= 50) {
+    header.classList.add("scroll");
+    img.src = "assets/images/logo-black.png";
+  } else {
+    header.classList.remove("scroll");
+    img.src = "assets/images/logo.png";
+  }
+});
+
 // ! Skills Progress Bar Fill When Appear
 const serves = document.querySelector(".about-company") as HTMLDivElement;
 const allServes = document.querySelectorAll(
@@ -41,3 +55,11 @@ function startCount(el: any) {
     }
   }, 5000 / goal);
 }
+
+// ! Making Scroll To Top Button Visible
+const toTop = document.getElementById("top") as HTMLSpanElement;
+window.addEventListener("scroll", () => {
+  window.scrollY >= 1000
+    ? (toTop.style.top = "93vh")
+    : (toTop.style.top = "-60px");
+});

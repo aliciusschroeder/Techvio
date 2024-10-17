@@ -7,6 +7,10 @@
   padding: 30px 0 100px;
   background-color: $bg-color;
 
+  @media (max-width: 767px) {
+    padding: 30px 10px 70px;
+  }
+
   .figure {
     background-color: white;
     box-shadow: $services-shadow;

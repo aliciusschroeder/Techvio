@@ -53,3 +53,15 @@ $(".testimonial-slider").owlCarousel({
     },
   },
 });
+
+// !Start A WOW Plugins
+$(() => {
+  new WOW().init();
+});
+
+// !Start A VanillaTilt Plugins
+VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+  max: 25,
+  speed: 400,
+  scale: 1.1,
+});

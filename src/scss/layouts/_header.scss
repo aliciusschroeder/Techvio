@@ -1,2 +1,226 @@
+/** @format */
+
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
+@use "../utilities/mixins" as *;
+
+header {
+  position: fixed;
+  z-index: 10;
+  width: 100% !important;
+  height: 98px;
+  padding: 17px;
+  font-family: "Catamaran", serif;
+
+  &.scroll {
+    background-color: white !important;
+    border-bottom: 1px solid #eee;
+    nav {
+      a {
+        color: black !important;
+      }
+    }
+
+    .toggler-icon {
+      background-color: black !important;
+    }
+  }
+
+  nav {
+    .container {
+      position: relative;
+    }
+
+    a {
+      color: white !important;
+    }
+
+    .navbar-toggler {
+      padding: 0.25rem 0.75rem;
+      font-size: 1.25rem;
+      line-height: 1;
+      background-color: transparent;
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+      position: relative;
+
+      .toggler-icon {
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+        display: block;
+        margin: 5px 0;
+        position: relative;
+        -webkit-transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
+
+        @media (max-width: 992px) {
+          background-color: white;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      &:not(.collapsed) {
+        .toggler-icon:nth-of-type(1) {
+          transform: rotate(45deg);
+          top: 7px;
+        }
+        .toggler-icon:nth-of-type(2) {
+          opacity: 0;
+        }
+
+        .toggler-icon:nth-of-type(3) {
+          transform: rotate(135deg);
+          top: -7px;
+        }
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 991px),
+        (max-width: 767px) {
+        .navbar-collapse {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #fff;
+          z-index: 9;
+          -webkit-box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .navbar-nav {
+      margin-left: 120px;
+
+      li {
+        padding: {
+          left: 8px;
+          right: 8px;
+        }
+
+        a {
+          color: white;
+          font : {
+            size: 17px;
+            weight: 600;
+          }
+        }
+      }
+
+      .dropdown-menu {
+        padding: 0;
+        margin: 0;
+        color: white;
+        width: 200px;
+        li {
+          padding: 7px;
+          &:not(:last-of-type) {
+            border-bottom: 1px solid #eee;
+          }
+
+          a {
+            color: black !important;
+            transition: $transition3;
+            font: {
+              size: 16px;
+              weight: 500;
+            }
+          }
+
+          &:hover {
+            background-color: $main-color !important;
+
+            a {
+              background-color: $main-color !important;
+              color: white !important;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 991px) {
+        margin: 0;
+        background-color: white;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 15px;
+
+        a {
+          color: black !important;
+        }
+
+        .dropdown-menu {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 1199px) {
+        margin-left: 60px;
+      }
+
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        margin-left: 30px;
+      }
+    }
+
+    .form {
+      position: absolute;
+      right: 0;
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
+
+      button {
+        position: relative;
+        background-color: $main-color;
+        color: white;
+        padding: 15px 36px;
+        border-radius: 5px;
+        box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+        z-index: 1;
+        overflow: hidden;
+        font: {
+          size: 17px;
+          weight: 600;
+        }
+        transition: $transition4;
+        border: none;
+        outline: none;
+
+        a {
+          color: white;
+        }
+
+        span {
+          position: absolute;
+          z-index: -1;
+          width: 0;
+          height: 0;
+          display: block;
+          border-radius: 30px;
+          background-color: $button-hover;
+          transform: translate(-50%, -50%);
+          transition: width $transition5 ease-in-out,
+            height $transition5 ease-in-out;
+        }
+
+        &:hover {
+          span {
+            height: 500px;
+            width: 200%;
+          }
+        }
+      }
+    }
+  }
+}

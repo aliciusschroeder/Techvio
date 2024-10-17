@@ -100,6 +100,10 @@
         @media (max-width: 1200px) {
           margin-top: 45px;
         }
+
+        @media (max-width: 767px) {
+          margin-bottom: 45px;
+        }
       }
     }
   }
@@ -107,8 +111,16 @@
 
 .why1 {
   padding: 100px 0 60px;
+
+  @media (max-width: 767px) {
+    padding: 50px 0 30px;
+  }
 }
 
 .why2 {
   padding: 60px 0 100px;
+
+  @media (max-width: 767px) {
+    padding: 30px 0 50px;
+  }
 }
