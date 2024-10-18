@@ -1,6 +1,7 @@
 include ../components/variable
 block variables
   - var fileName = "fileName";
+  - var number = "1";
 doctype html
 html(lang="en")
   head 
@@ -11,6 +12,13 @@ html(lang="en")
   body
     include ../components/header
     block content
+      .heading
+        img.content(src=`assets/images/page-title-bg-${number}.jpg`, alt="")
+        h2= fileName
+        p.path
+          a(href="index.html") Home
+          span . 
+          | #{fileName}
     block section
     include ../components/footer
     include ../components/scripts
