@@ -1,0 +1,14 @@
+section.step-work
+  block header
+  .head
+    h2 4 Step Work Process
+    p Working Process
+  .container
+    .row
+      - for (var i = 0; i < work.length; ++i)
+        .col-lg-3.col-md-6.col-sm-12.cols
+          .item
+            .icon
+              img(src=`assets/images/icon/workprocess-icon-${i + 1}.svg`, alt="")
+            h3.mt-30.mb-15= work[i].title
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua.

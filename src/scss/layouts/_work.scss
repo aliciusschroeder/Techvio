@@ -1,0 +1,81 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.step-work {
+  padding: 40px 0 80px;
+  background-color: $bg-color;
+
+  .cols {
+    counter-increment: number-conter;
+  }
+
+  .item {
+    position: relative;
+    display: block;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: $about-shadow;
+    transition: $transition5;
+    padding: 35px 30px 20px;
+    overflow: hidden;
+    margin: 10px 0;
+
+    .icon {
+      width: 85px;
+      height: 85px;
+      padding: 15px;
+      border-radius: 20%;
+      display: inline-block;
+      border: 5px solid rgb(123, 104, 238, 0.05);
+      background-color: rgb(123, 104, 238, 0.05);
+      transition: $transition4;
+
+      img {
+        width: 45px;
+      }
+    }
+
+    h3 {
+      font: {
+        size: 22px;
+        weight: 700;
+      }
+      margin: {
+        bottom: 20px;
+      }
+    }
+
+    p {
+      font: {
+        size: 17px;
+        weight: 450;
+      }
+      color: $font-color;
+      line-height: 1.6;
+    }
+
+    &:hover {
+      .icon {
+        border-color: rgb(123, 104, 238, 0.3);
+      }
+
+      transform: translateY(-5px);
+    }
+
+    &::before {
+      position: absolute;
+      content: "0" counter(number-conter);
+      bottom: -45px;
+      right: 0;
+      color: rgb(123, 104, 238, 0.05);
+      font: {
+        size: 12rem;
+        weight: 700;
+        family: "Catamaran", serif;
+      }
+      line-height: 1;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+include ../components/variable
+
+section.py-100.services3
+  .container
+    .row
+      - for(var i = 0; i < ServicesThree.length; ++i)
+        .service.col-lg-4.col-md-6.col-sm-12.p-30
+          img(src=`assets/images/icon/services-three-icon-${i + 1}.svg` alt="")
+          h3.mt-30.mb-15= ServicesThree[i]
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore
+          ul 
+            - for(var j = 0; j < ServicesThreeUl.length; ++j)
+              li= ServicesThreeUl[j]
+          a(href="#").my-10
+            i.fa-solid.fa-arrow-right-long 
+            span Learn More

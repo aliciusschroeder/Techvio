@@ -1,0 +1,16 @@
+include ../components/variable
+
+section.py-100.services2
+  .container
+    .row
+      - for(var i = 0; i < ServicesTwo.length; ++i)
+        .service.col-lg-4.col-md-6.col-sm-12.p-30
+          .holder.holder1
+            img.img(src=`assets/images/icon/services-icon-${i + 1}.svg` alt="")
+          .holder.holder2
+            img.img-hover(src=`assets/images/icon/services-icon-hover-${i + 1}.svg` alt="")
+          h3.mt-30.mb-15= ServicesTwo[i]
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt dolore magna aliqua
+          a(href="#").my-10
+            i.fa-solid.fa-arrow-right-long 
+            span Read More

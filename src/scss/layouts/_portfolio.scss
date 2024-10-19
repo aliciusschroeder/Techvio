@@ -183,3 +183,115 @@
     }
   }
 }
+
+.protfolio-details {
+  padding: 100px 0;
+
+  img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  h3 {
+    font: {
+      size: 26px;
+      weight: 650;
+    }
+    margin-top: 30px;
+  }
+
+  h4 {
+    font: {
+      size: 20px;
+      weight: 600;
+    }
+    margin-top: 30px;
+  }
+
+  p {
+    line-height: 1.8;
+    font: {
+      size: 17px;
+      weight: 400;
+      family: "Catamaran", serif;
+    }
+    color: $font-color;
+  }
+
+  .anchor {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    a {
+      svg {
+        color: $main-color;
+        border: 1px solid $main-color;
+        border-radius: 50%;
+        padding: 10px;
+        width: 35px;
+        height: 35px;
+        margin-right: 14px;
+        transition: $transition3;
+        background-color: transparent;
+
+        &:hover {
+          background-color: $main-color;
+          border-color: $main-color;
+          color: white;
+        }
+      }
+    }
+  }
+
+  button {
+    position: relative;
+    padding: 15px 36px;
+    border-radius: 5px;
+    box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+    z-index: 1;
+    overflow: hidden;
+    font: {
+      size: 16px;
+      weight: 550;
+      family: "Catamaran", sans-serif;
+    }
+    margin-top: 5px;
+    transition: $transition4;
+    border: none;
+    outline: none;
+
+    a {
+      transition: $transition4;
+      color: $main-color;
+    }
+
+    &.active {
+      background-color: $main-color;
+      a {
+        color: white;
+      }
+    }
+
+    span {
+      position: absolute;
+      z-index: -1;
+      width: 0;
+      height: 0;
+      display: block;
+      border-radius: 30px;
+      background-color: $button-hover;
+      transform: translate(-50%, -50%);
+      transition: width $transition5 ease-in-out,
+        height $transition5 ease-in-out;
+    }
+
+    &:hover {
+      a {
+        color: white;
+      }
+      span {
+        height: 500px;
+        width: 200%;
+      }
+    }
+  }
+}

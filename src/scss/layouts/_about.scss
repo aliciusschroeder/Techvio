@@ -138,3 +138,68 @@
     }
   }
 }
+
+.about {
+  padding: 90px 0px 70px;
+  background-color: white;
+
+  .about-item {
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: $about-shadow;
+    transition: $transition5;
+    padding: 35px 20px;
+    margin: 10px 0;
+
+    img {
+      width: 85px;
+    }
+
+    h3 {
+      font: {
+        size: 20px;
+        weight: 650;
+      }
+    }
+
+    p {
+      font: {
+        size: 17px;
+        weight: 450;
+      }
+      line-height: 1.6;
+      color: $font-color;
+    }
+
+    a {
+      display: block;
+      color: $main-color;
+      cursor: default;
+      margin: 0;
+      font: {
+        size: 16px;
+        weight: 600;
+      }
+
+      svg {
+        padding-right: 10px;
+        transition: $transition6;
+      }
+
+      span {
+        cursor: pointer;
+      }
+
+      &:hover {
+        svg {
+          transform: translateX(8px);
+        }
+      }
+    }
+
+    &:hover {
+      transform: translateY(-15px);
+    }
+  }
+}

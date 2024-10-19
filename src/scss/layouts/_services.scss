@@ -3,7 +3,9 @@
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
 
-.services1 {
+.services1,
+.services2,
+.services3 {
   padding: 30px 15px 80px;
 
   .service {
@@ -25,15 +27,6 @@
       margin: 5px;
     }
 
-    img {
-      width: 50px !important;
-      border-radius: 4px;
-      transition: $transition6;
-      filter: brightness(0) saturate(100%) invert(59%) sepia(85%)
-        saturate(3196%) hue-rotate(325deg) brightness(98%) contrast(103%);
-      mix-blend-mode: multiply;
-    }
-
     h3 {
       font: {
         size: 20px;
@@ -44,9 +37,9 @@
     p {
       font: {
         size: 17px;
-        weight: 400;
+        weight: 450;
       }
-      line-height: 1.6;
+      line-height: 1.8;
       color: $font-color;
     }
 
@@ -78,9 +71,300 @@
 
     &:hover {
       transform: translateY(-15px);
+    }
+  }
+}
+
+.services1 {
+  .service {
+    img {
+      width: 50px !important;
+      border-radius: 4px;
+      transition: $transition6;
+      filter: brightness(0) saturate(100%) invert(59%) sepia(85%)
+        saturate(3196%) hue-rotate(325deg) brightness(98%) contrast(103%);
+      mix-blend-mode: multiply;
+    }
+
+    &:hover {
+      transform: translateY(-15px);
 
       img {
         transform: rotateY(180deg);
+      }
+    }
+  }
+}
+
+.services2 {
+  padding: 100px 0;
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  .service {
+    transition: $transition6;
+    padding: 45px 40px;
+
+    @media (max-width: 767px) {
+      width: calc(100% - 30px);
+      margin: 10px 15px;
+    }
+
+    .holder {
+      position: relative;
+      display: inline-block;
+      transition: $transition9;
+      width: 50px;
+      height: 50px;
+      will-change: transform;
+
+      &.holder2 {
+        left: -50px;
+      }
+
+      img {
+        position: absolute;
+      }
+
+      .img {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: $transition5;
+      }
+
+      .img-hover {
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+      }
+    }
+
+    &:hover {
+      .img {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .img-hover {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .holder {
+        transform: rotateY(180deg);
+      }
+
+      background-color: $main-color;
+
+      h3,
+      p,
+      a span,
+      a svg {
+        color: white;
+      }
+    }
+  }
+}
+
+.services3 {
+  padding: 100px 0;
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  .service {
+    padding: 30px 30px;
+
+    @media (max-width: 767px) {
+      width: calc(100% - 30px);
+      margin: 10px 15px;
+    }
+
+    img {
+      width: 50px;
+    }
+
+    ul {
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
+      border: {
+        top: 2px solid #e6e5f1;
+        bottom: 2px solid #e6e5f1;
+      }
+      margin: {
+        top: 22px;
+        bottom: 20px;
+      }
+
+      li {
+        position: relative;
+        padding: 5px;
+        padding-left: 20px;
+        color: $font-color;
+        font: {
+          size: 16px;
+          weight: 400;
+          family: "Catamaran", serif;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0px;
+          top: 12px;
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+.services-details {
+  padding: 100px 0;
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  .holder-img {
+    padding: 0 30px 40px 30px;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0 0 40px 0;
+    }
+  }
+
+  h3 {
+    font: {
+      size: 26px;
+      weight: 650;
+    }
+  }
+
+  p {
+    line-height: 1.8;
+    font: {
+      size: 17px;
+      weight: 450;
+    }
+    color: $font-color;
+  }
+
+  .holder {
+    background-color: #eee;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    padding: 30px 25px;
+
+    h3 {
+      position: relative;
+      font: {
+        size: 23px;
+        weight: 650;
+      }
+      border-bottom: 1px solid white;
+      padding-bottom: 14px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 50px;
+        height: 1px;
+        background-color: $main-color;
+      }
+    }
+
+    ul {
+      margin-top: 20px;
+      li {
+        padding: 10px;
+        border-radius: 6px;
+        background-color: $main-color;
+        color: white;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: $transition5;
+        font: {
+          weight: 550;
+        }
+
+        &:hover {
+          background-color: $button-hover;
+        }
+      }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      position: relative;
+      padding: 15px 36px;
+      border-radius: 5px;
+      box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+      z-index: 1;
+      overflow: hidden;
+      background-color: $main-color;
+      font: {
+        size: 16px;
+        weight: 550;
+        family: "Catamaran", sans-serif;
+      }
+      transition: $transition4;
+      margin: {
+        top: 10px;
+      }
+      border: none;
+      outline: none;
+
+      &:first-of-type {
+        margin-top: 20px;
+      }
+
+      a {
+        transition: $transition4;
+        color: white;
+      }
+
+      span {
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        display: block;
+        border-radius: 30px;
+        background-color: $button-hover;
+        transform: translate(-50%, -50%);
+        transition: width $transition5 ease-in-out,
+          height $transition5 ease-in-out;
+      }
+
+      &:hover {
+        a {
+          color: white;
+        }
+        span {
+          height: 500px;
+          width: 200%;
+        }
       }
     }
   }

@@ -102,12 +102,12 @@ header {
 
       li {
         padding: {
-          left: 8px;
-          right: 8px;
+          left: 12px;
+          right: 12px;
         }
 
-        @media (max-width: 991px) {
-          .dropdown-toggle {
+        .dropdown-toggle {
+          @media (max-width: 991px) {
             &::after {
               content: "+";
               position: absolute;
@@ -118,12 +118,36 @@ header {
                 size: 18px;
                 weight: 600;
               }
+              color: rgba(0, 0, 255, 0.7);
             }
 
             &[aria-expanded="true"]::after {
               padding-right: 8px;
               padding-bottom: 5px;
               content: "-";
+              color: red;
+            }
+          }
+
+          @media (min-width: 992px) {
+            &::after {
+              content: "\f078";
+              position: absolute;
+              border: 0;
+              right: 0;
+              font: {
+                size: 12px;
+                weight: 900;
+                family: "Font Awesome 5 Free";
+              }
+              padding: {
+                left: 10px;
+                top: 4px;
+              }
+            }
+
+            &[aria-expanded="true"]::after {
+              content: "\f077";
             }
           }
         }
@@ -131,7 +155,7 @@ header {
         a {
           color: white;
           font : {
-            size: 17px;
+            size: 16px;
             weight: 600;
           }
         }
@@ -152,7 +176,7 @@ header {
             color: black !important;
             transition: $transition3;
             font: {
-              size: 16px;
+              size: 15px;
               weight: 500;
             }
           }
