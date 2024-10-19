@@ -14,9 +14,7 @@ $(() => {
         relY = e.pageY - parentOffset.top;
       $(this).find("span").css({ top: relY, left: relX });
     });
-});
 
-$(window).on("load", function () {
   var portfolioIsotope = $(".protfolio-container").isotope({
     itemSelector: ".data",
   });
@@ -26,6 +24,19 @@ $(window).on("load", function () {
     portfolioIsotope.isotope({
       filter: $(this).data("filter"),
     });
+  });
+
+  // !Start A WOW Plugins
+  new WOW().init();
+
+  // !Preloader Area
+  $(".preloader").addClass("preloader-deactivate");
+
+  // !Start A VanillaTilt Plugins
+  VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+    max: 25,
+    speed: 400,
+    scale: 1.1,
   });
 });
 
@@ -52,16 +63,4 @@ $(".testimonial-slider").owlCarousel({
       items: 3,
     },
   },
-});
-
-// !Start A WOW Plugins
-$(() => {
-  new WOW().init();
-});
-
-// !Start A VanillaTilt Plugins
-VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-  max: 25,
-  speed: 400,
-  scale: 1.1,
 });
