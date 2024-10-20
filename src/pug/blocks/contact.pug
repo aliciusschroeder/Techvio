@@ -1,0 +1,23 @@
+include ../components/variable
+
+section.py-100.contact-form
+  block header
+    .head
+      h2 Let's Talk
+      p Contact Us
+  .container
+    form#contactForm
+      .row 
+        .col-lg-6.col-md-12.col-12
+          input(type="text" id="name" name="name" placeholder="Your Name" required autocomplete="name")
+        .col-lg-6.col-md-12.col-12
+          input(type="email" id="email" name="email" placeholder="Your Email" required autocomplete="email")
+        .col-lg-6.col-md-12.col-12
+          input(type="text" id="phone" name="phone" placeholder="Your Phone" required autocomplete="tel")
+        .col-lg-6.col-md-12.col-12
+          input(type="text" id="subject" name="subject" placeholder="Your Subject" required autocomplete="on")
+        .col-lg-12.col-md-12.col-12
+          textarea(id="message" name="message" placeholder="Your Message" required autocomplete="off")
+        .col-lg-12.col-md-12.col-12
+          button#button.default-btn(type="submit") Send Message
+            span

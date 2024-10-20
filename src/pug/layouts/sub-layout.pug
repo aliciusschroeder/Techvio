@@ -6,7 +6,7 @@ doctype html
 html(lang="en")
   head 
     include ../components/meta
-    title= pageTitle
+    title= `${pageTitle} | ${fileName}`
     include ../components/styles
     include ../components/fonts
   body

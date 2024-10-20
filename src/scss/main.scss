@@ -19,6 +19,10 @@
 @use "layouts/testimonials";
 @use "layouts/sub_layout";
 @use "layouts/work";
+@use "layouts/pricing";
+@use "layouts/buttons";
+@use "layouts/contact";
+@use "layouts/coming-soon";
 
 // !Utilities File
 @use "utilities/colors" as *;

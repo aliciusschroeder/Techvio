@@ -51,7 +51,8 @@
   }
 }
 
-.subscribe2 {
+.subscribe2,
+.subscribe3 {
   position: relative;
   padding: 50px 0;
   background: url("../assets/images/banner-bg.jpg");
@@ -109,59 +110,10 @@
   }
 
   button {
-    position: relative;
-    padding: 15px 36px;
-    border-radius: 5px;
-    box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
-    z-index: 1;
-    overflow: hidden;
-    font: {
-      size: 16px;
-      weight: 550;
-      family: "Catamaran", sans-serif;
-    }
-    transition: $transition4;
     margin: {
       top: 20px;
       left: 10px;
       right: 10px;
-    }
-    border: none;
-    outline: none;
-
-    a {
-      transition: $transition4;
-      color: $main-color;
-    }
-
-    &.active {
-      background-color: $main-color;
-      a {
-        color: white;
-      }
-    }
-
-    span {
-      position: absolute;
-      z-index: -1;
-      width: 0;
-      height: 0;
-      display: block;
-      border-radius: 30px;
-      background-color: $button-hover;
-      transform: translate(-50%, -50%);
-      transition: width $transition5 ease-in-out,
-        height $transition5 ease-in-out;
-    }
-
-    &:hover {
-      a {
-        color: white;
-      }
-      span {
-        height: 500px;
-        width: 200%;
-      }
     }
   }
 }

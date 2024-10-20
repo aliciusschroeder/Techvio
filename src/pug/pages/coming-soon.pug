@@ -1,0 +1,41 @@
+include ../components/variable
+block variables
+  - var fileName = "Coming Soon";
+doctype html
+html(lang="en")
+  head 
+    include ../components/meta
+    title= `${pageTitle} | ${fileName}`
+    include ../components/styles
+    include ../components/fonts
+  body
+    include ../components/preloader
+    block section
+    section.coming-soon 
+      .container 
+        h1 Our website is Coming Soon
+        p Before we jump into our list of coming soon page examples, let’s take a quick look at why you should create one of these for your own website launch.
+        form#contactForm
+          input#email-input(type='email' placeholder='Enter Your Email' name='email', required, autocomplete='email')
+          button#button(type='submit') Submit
+        .bubbles 
+          .bubble
+            span.number#days 0
+            span.name Days
+          .bubble 
+            span.number#hours 0
+            span.name Hours
+          .bubble 
+            span.number#minutes 0
+            span.name Minutes
+          .bubble 
+            span.number#seconds 0
+            span.name Seconds
+        .social-icon
+          h4 Follow us for update:
+          .anchor
+            a(href="#"): i.fa-brands.fa-facebook-f
+            a(href="#"): i.fa-brands.fa-x-twitter
+            a(href="#"): i.fa-brands.fa-youtube
+            a(href="#"): i.fa-brands.fa-linkedin
+    include ../components/scripts

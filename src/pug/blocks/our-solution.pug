@@ -1,0 +1,12 @@
+include ../components/variable
+
+section.py-100.our-solution
+  block header
+    .head
+      h2 Our Solution
+      p We Work On
+  .container
+    each solution in solutions
+      span.customer.flex-center
+        img(src=`assets/images/technology/${solution.img}`, alt=solution.title)
+        h3= solution.title

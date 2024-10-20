@@ -5,9 +5,9 @@ section.py-100.services3
     .head
       h2 What We Provide
       p Our Services
-  .container
+  .container.text-center
     .row
-      - for(var i = 0; i < ServicesThree.length; ++i)
+      - for(var i = 0; i < 3; ++i)
         .service.col-lg-4.col-md-6.col-sm-12.p-30
           img(src=`assets/images/icon/services-three-icon-${i + 1}.svg` alt="")
           h3.mt-30.mb-15= ServicesThree[i]
@@ -18,3 +18,6 @@ section.py-100.services3
           a(href="#").my-10
             i.fa-solid.fa-arrow-right-long 
             span Learn More
+    button.default-btn.mt-4
+      a(href="services3.html") See All Services
+      span

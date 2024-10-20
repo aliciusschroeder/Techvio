@@ -1,0 +1,172 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+button.default {
+  position: relative;
+  padding: 15px 36px;
+  border-radius: 5px;
+  box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+  z-index: 1;
+  overflow: hidden;
+  font: {
+    size: 16px;
+    weight: 550;
+    family: "Catamaran", sans-serif;
+  }
+  transition: $transition4;
+  background-color: $main-color;
+  margin: {
+    top: 20px;
+    left: 10px;
+    right: 10px;
+  }
+  border: 1px solid $main-color;
+  outline: none;
+
+  a {
+    transition: $transition4;
+    color: white;
+  }
+
+  &:hover {
+    background-color: white;
+    a {
+      color: $main-color;
+    }
+  }
+}
+
+button.default-btn {
+  position: relative;
+  background-color: $main-color;
+  color: white;
+  padding: 15px 36px;
+  border-radius: 5px;
+  box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+  z-index: 1;
+  overflow: hidden;
+  font: {
+    size: 17px;
+    weight: 600;
+  }
+  transition: $transition4;
+  border: none;
+  outline: none;
+
+  a {
+    color: white;
+  }
+
+  &.active {
+    background-color: white;
+    a {
+      transition: $transition4;
+      color: $main-color;
+    }
+  }
+
+  span {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    display: block;
+    border-radius: 30px;
+    background-color: $button-hover;
+    transform: translate(-50%, -50%);
+    transition: width $transition5 ease-in-out, height $transition5 ease-in-out;
+  }
+
+  &:hover {
+    span {
+      height: 500px;
+      width: 200%;
+    }
+
+    &.active {
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+button.special {
+  position: relative;
+  padding: 15px 36px;
+  border-radius: 5px;
+  box-shadow: 0 7px 25px rgb(123, 104, 238, 0.25);
+  z-index: 12;
+  overflow: hidden;
+  cursor: pointer;
+  font: {
+    size: 16px;
+    weight: 600;
+    family: "Catamaran", sans-serif;
+  }
+  transition: $transition5;
+  margin: {
+    top: 20px;
+    right: 10px;
+  }
+  border: none;
+  outline: none;
+
+  &:last-of-type {
+    margin-left: 10px;
+  }
+
+  a {
+    transition: $transition4;
+    color: $main-color;
+  }
+
+  &.active {
+    background-color: $button-hover;
+    a {
+      color: white;
+    }
+  }
+
+  span {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    display: block;
+    border-radius: 30px;
+    transform: translate(-50%, -50%);
+    transition: width $transition6 ease-in-out, height $transition6 ease-in-out;
+  }
+
+  &:hover {
+    a {
+      color: white;
+    }
+    span {
+      height: 500px;
+      width: 200%;
+    }
+  }
+
+  &.default-btn-one {
+    &:hover {
+      span {
+        background-color: $button-hover;
+      }
+    }
+  }
+
+  &.default-btn-two {
+    &:hover {
+      a {
+        color: $main-color;
+      }
+      span {
+        background-color: white;
+      }
+    }
+  }
+}
