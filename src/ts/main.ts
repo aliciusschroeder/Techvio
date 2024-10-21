@@ -63,3 +63,46 @@ window.addEventListener("scroll", () => {
     ? (toTop.style.top = "93vh")
     : (toTop.style.top = "-60px");
 });
+
+//! Select all buttons and define the button array
+let btns = document.querySelectorAll(
+  ".blog-side .buttonrl"
+) as NodeListOf<HTMLButtonElement>;
+let btnArr: string[] = ["#button4", "#button3", "#button2", "#button1"];
+
+const getActiveIndex = (): number => {
+  return btnArr.findIndex((btnSelector) =>
+    document.querySelector(btnSelector)?.classList.contains("active")
+  );
+};
+
+btns.forEach((btn, index) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    let currIndex = getActiveIndex();
+
+    if (index === 0 && currIndex < 3) {
+      currIndex += 1;
+    } else if (index !== 0 && currIndex > 0) {
+      currIndex -= 1;
+    }
+
+    btnArr.forEach((btnSelector) => {
+      document.querySelector(btnSelector)?.classList.remove("active");
+    });
+    document.querySelector(btnArr[currIndex])?.classList.add("active");
+  });
+});
+
+btnArr.forEach((btnSelector) => {
+  let btnElement = document.querySelector(btnSelector);
+
+  if (btnElement) {
+    btnElement.addEventListener("click", () => {
+      btnArr.forEach((selector) => {
+        document.querySelector(selector)?.classList.remove("active");
+      });
+      btnElement.classList.add("active");
+    });
+  }
+});
