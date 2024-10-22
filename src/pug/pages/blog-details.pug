@@ -27,20 +27,71 @@ block section
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
           .links.flex-between
             .tag
-              h4 Tags: 
+              h4 Tag: 
               span Solutions
               span Guide
-            .link
+            .link.flex-center
               h4 Share: 
               .anchor
                 a(href="#"): i.fa-brands.fa-facebook-f
                 a(href="#"): i.fa-brands.fa-x-twitter
                 a(href="#"): i.fa-brands.fa-linkedin
+          .prevNext.flex-between
+            a(href="#")
+              .prev
+                i.fa-solid.fa-arrow-left-long
+                span Previous Post
+            a(href="#")
+              .next
+                span Next Post
+                i.fa-solid.fa-arrow-right-long
+          section.comments
+            h3 3 Comments:
+            .comment.d-flex
+              .img
+                img(src="assets/images/clients/1.jpg" alt="")
+              .data
+                h4 Wilson Swanson
+                span June 15 - 2024 12:30 PM
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation
+                .reply
+                  a(href="#") Reply
+            .comment.d-flex
+              .img
+                img(src="assets/images/clients/2.jpg" alt="")
+              .data
+                h4 Ella Hodges
+                span June 15 - 2024 12:30 PM
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation
+                .reply
+                  a(href="#") Reply
+            .comment.d-flex
+              .img
+                img(src="assets/images/clients/4.jpg" alt="")
+              .data
+                h4 Melissa Bryant
+                span June 15 - 2024 12:30 PM
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation
+                .reply
+                  a(href="#") Reply
+            h3 Leave Replay
+            p Your email address will not be published. Required fields are marked *
+            form#contactForm
+              .row 
+                .col-lg-12.col-md-12.col-sm-12
+                  textarea#message-input(placeholder='Comment' name='message' autocomplete='message')
+                .col-lg-6.col-md-12.col-sm-12
+                  input#name-input(type='text' placeholder='Name *' name='name', required, autocomplete='name')
+                .col-lg-6.col-md-12.col-sm-12
+                  input#email-input(type='email' placeholder='Email *' name='email', required, autocomplete='email')
+                .col-lg-12.col-md-12.col-sm-12
+                  input#website-input(type='text' placeholder='Website' name='website' autocomplete='website')
+                button(type='submit')#button Post Comment
         .col-lg-4.col-md-12.col-sm-12
           aside.sidebar
-            form#contactForm
+            form
               input#email-input(type='text' placeholder='Search' name='search', required, autocomplete='search')
-              button#button(type='submit'): i.fas.fa-search
+              button(type='submit'): i.fas.fa-search
             .popular-task
               h3.header Popular Posts
               ul
