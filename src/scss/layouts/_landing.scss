@@ -467,4 +467,16 @@
       rgb(123, 104, 238, 0.12) 70%
     );
   }
+
+  .anchor {
+    a {
+      svg {
+        &:hover {
+          background-color: white !important;
+          border-color: white !important;
+          color: $main-color !important;
+        }
+      }
+    }
+  }
 }

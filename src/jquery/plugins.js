@@ -80,55 +80,59 @@ $(".testimonial-slider").owlCarousel({
   },
 });
 
-particlesJS("particles-js", {
-  particles: {
-    number: {
-      value: 100,
-      density: {
-        enable: true,
-        value_area: 600,
+$(() => {
+  if ($("#particles-js").length) {
+    particlesJS("particles-js", {
+      particles: {
+        number: {
+          value: 100,
+          density: {
+            enable: true,
+            value_area: 600,
+          },
+        },
+        color: {
+          value: "#ffffff",
+        },
+        shape: {
+          type: "polygon",
+          polygon: {
+            sides: 5,
+          },
+        },
+        opacity: {
+          value: 0.5,
+        },
+        size: {
+          value: 3,
+          random: true,
+        },
+        move: {
+          enable: true,
+          speed: 7,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        },
+        line_linked: {
+          enable: false,
+        },
       },
-    },
-    color: {
-      value: "#ffffff",
-    },
-    shape: {
-      type: "polygon",
-      polygon: {
-        sides: 5,
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: false,
+          },
+          onclick: {
+            enable: false,
+          },
+          resize: true,
+        },
       },
-    },
-    opacity: {
-      value: 0.5,
-    },
-    size: {
-      value: 3,
-      random: true,
-    },
-    move: {
-      enable: true,
-      speed: 7,
-      direction: "none",
-      random: false,
-      straight: false,
-      out_mode: "out",
-      bounce: false,
-    },
-    line_linked: {
-      enable: false,
-    },
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: {
-        enable: false,
-      },
-      onclick: {
-        enable: false,
-      },
-      resize: true,
-    },
-  },
-  retina_detect: true,
+      retina_detect: true,
+    });
+  }
 });

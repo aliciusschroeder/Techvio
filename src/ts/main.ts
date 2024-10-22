@@ -21,46 +21,71 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ! Skills Progress Bar Fill When Appear
-const serves = document.querySelector(".about-company") as HTMLDivElement;
-const allServes = document.querySelectorAll(
-  ".analyt .line span"
-) as NodeListOf<HTMLSpanElement>;
-let flag: boolean = true;
+// !Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // !Skills Progress Bar Fill When Appears
+  const serves = document.querySelector(".about-company") as HTMLDivElement;
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= serves.offsetTop - 250 && flag) {
-    allServes.forEach((serve: any) => {
-      serve.style.width = serve.dataset.prog;
-    });
-    flag = false;
+  if (!serves) {
+    return;
   }
+
+  const allServes = document.querySelectorAll(
+    ".analyt .line span"
+  ) as NodeListOf<HTMLSpanElement>;
+  let flag: boolean = true;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= serves.offsetTop - 250 && flag) {
+      allServes.forEach((serve: any) => {
+        serve.style.width = serve.dataset.prog;
+      });
+      flag = false;
+    }
+  });
 });
 
-// ! start count Of Stats
+// ! Start Count Of Stats
 const stats = document.getElementById("subscribe") as HTMLElement;
-const number = document.querySelectorAll(
-  ".subscribe .timer .number"
-) as NodeListOf<HTMLSpanElement>;
-let start = false;
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= stats.offsetTop - 450) {
-    if (!start) {
-      number.forEach((num) => startCount(num));
+if (!stats) {
+  // TODO console.warn("The #subscribe section does not exist on this page.");
+} else {
+  const number = document.querySelectorAll(
+    ".subscribe .timer .number"
+  ) as NodeListOf<HTMLSpanElement>;
+  let start = false;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= stats.offsetTop - 450) {
+      if (!start) {
+        number.forEach((num) => startCount(num));
+      }
+      start = true;
     }
-    start = true;
+  });
+}
+
+function startCount(numElement: HTMLSpanElement) {
+  const targetValue = numElement.dataset.goal;
+
+  if (targetValue) {
+    const target = parseInt(targetValue, 10);
+
+    let count = 0;
+    const increment = Math.ceil(target / 100);
+
+    const interval = setInterval(() => {
+      count += increment;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      numElement.innerText = count.toString();
+    }, 150);
+  } else {
+    console.warn("data-target attribute is missing on the number element.");
   }
-});
-
-function startCount(el: any) {
-  let goal = el.dataset.goal;
-  let count = setInterval(() => {
-    el.textContent++;
-    if (el.textContent == goal) {
-      clearInterval(count);
-    }
-  }, 5000 / goal);
 }
 
 // ! Making Scroll To Top Button Visible
