@@ -1,16 +1,23 @@
 /** @format */
 
 // !Sticky header
-window.addEventListener("scroll", () => {
-  const header = document.querySelector("header") as HTMLElement;
-  const img = document.querySelector("header img") as HTMLImageElement;
+const header = document.querySelector("header") as HTMLElement;
+const img = document.querySelector("header img") as HTMLImageElement;
+const currentPage = window.location.pathname;
 
+if (currentPage.includes("/landing2.html")) {
+  header.classList.add("dark");
+  img.src = "assets/images/logo-black.png";
+}
+
+window.addEventListener("scroll", () => {
   if (window.scrollY >= 50) {
     header.classList.add("scroll");
     img.src = "assets/images/logo-black.png";
   } else {
     header.classList.remove("scroll");
-    img.src = "assets/images/logo.png";
+    if (!currentPage.includes("/landing2.html"))
+      img.src = "assets/images/logo.png";
   }
 });
 

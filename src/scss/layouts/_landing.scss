@@ -2,6 +2,7 @@
 
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
+@use "../utilities/animations" as *;
 
 .landing {
   overflow: hidden;
@@ -22,6 +23,10 @@
 
   @media (max-width: 767px) {
     min-height: 110vh;
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    min-height: 125vh;
   }
 
   .title {
@@ -99,6 +104,10 @@
     @media (max-width: 767px) {
       text-align: center;
     }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+      margin-top: 40px;
+    }
   }
 
   .under {
@@ -114,6 +123,10 @@
 
   .photo {
     @media (max-width: 767px) {
+      margin-top: 40px;
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
       margin-top: 40px;
     }
     .banner-image {
@@ -133,15 +146,87 @@
   align-items: center;
   top: 0px;
   min-height: 100vh;
+  background: url("../assets/images/home-bg-2.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
 
   @media (max-width: 767px) {
     min-height: 110vh;
   }
 
-  background: url("../assets/images/home-bg-2.svg") no-repeat;
-  background-size: cover;
-  background-position: center;
+  @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+    min-height: 115vh;
+  }
 
+  .home-shape-animation {
+    .shape-1 {
+      position: absolute;
+      right: 10%;
+      top: 16%;
+      z-index: -1;
+      animation: animationFramesOne 20s infinite linear;
+    }
+
+    .shape-2 {
+      position: absolute;
+      left: 33%;
+      top: 18%;
+      z-index: -1;
+
+      img {
+        animation-name: rotateMe;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+    }
+
+    .shape-3 {
+      position: absolute;
+      left: 5%;
+      bottom: 25%;
+      z-index: -1;
+      animation: animationFramesOne 20s infinite linear;
+    }
+
+    .shape-4 {
+      position: absolute;
+      right: 10%;
+      bottom: 25%;
+      z-index: -1;
+      animation: animationFramesTwo 20s infinite linear;
+    }
+
+    .shape-5 {
+      position: absolute;
+      left: 5%;
+      top: 26%;
+      z-index: -1;
+      animation: moveLeftBounce 3s linear infinite;
+    }
+
+    .shape-6 {
+      position: absolute;
+      left: 50%;
+      bottom: 15%;
+      z-index: -1;
+      animation: rotate3d 4s linear infinite;
+    }
+
+    .shape-7 {
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      z-index: -1;
+      animation: moveScale 3s linear infinite;
+    }
+  }
+
+  .title {
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+      margin-top: 40px;
+    }
+  }
   h1 {
     color: #f44336;
     font-size: 18px;
@@ -149,9 +234,18 @@
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 15px;
-    background-image: linear-gradient(45deg, #f44336 48%, #ff9800 56%);
+    background-image: -webkit-linear-gradient(45deg, #f44336 20%, #ff9800 80%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: 991px) {
+      margin-top: 150px;
+    }
+
+    @media (max-width: 767px) {
+      margin-top: 125px;
+      text-align: center;
+    }
   }
 
   h3 {
@@ -159,19 +253,29 @@
     font-size: 68px;
     font-weight: 700;
     margin: 0 0 20px 0;
-    width: 650px;
+    max-width: 650px;
     line-height: 1.4;
 
     @media only screen and (min-width: 1200px) and (max-width: 1399px) {
       font-size: 58px;
     }
 
+    @media (max-width: 1199px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+      text-align: center;
+    }
+
     span {
+      display: block;
       color: #f44336;
       background-image: -webkit-linear-gradient(
         45deg,
-        #f44336 48%,
-        #ff9800 56%
+        #f44336 10%,
+        #ff9800 90%
       );
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -180,14 +284,21 @@
 
   p {
     color: $font-color;
-    font-size: 16px;
-    margin: 0 0 0 0;
-    font-weight: 400;
+    font-size: 17px;
+    margin: 0;
+    font-weight: 450;
     line-height: 1.8;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
     font-family: "Catamaran", sans-serif;
     margin-bottom: 15px;
 
+    @media (max-width: 767px) {
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  .buttons2 {
     @media (max-width: 767px) {
       text-align: center;
     }
@@ -209,24 +320,80 @@
 
   .button {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    position: relative;
     margin: {
-      left: 50px;
+      left: 40px;
       bottom: -20px;
       top: 15px;
     }
-    background-color: $main-color;
-    position: relative;
 
-    svg {
-      color: white;
-      font-size: 24px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    span {
+      display: block;
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $main-color;
+      z-index: 100;
+      cursor: pointer;
+
+      svg {
+        color: white;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 110;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        width: 120%;
+        height: 120%;
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: pulse 2s ease-out infinite;
+        background-color: $main-color;
+        z-index: 90;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        width: 140%;
+        height: 140%;
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: pulse 2s 1s ease-out infinite;
+        background-color: $main-color;
+        z-index: 90;
+      }
+    }
+  }
+
+  .photo {
+    @media (max-width: 767px) {
+      margin-top: 40px;
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 1399px) {
+      margin-top: 70px;
+    }
+
+    .banner-image {
+      width: 100%;
+      @media (min-width: 1440px) {
+        padding-left: 40px;
+      }
+      img {
+        width: 96%;
+      }
     }
   }
 }

@@ -31,10 +31,3 @@
 @use "utilities/animations";
 @use "utilities/functions";
 @use "utilities/mixins";
-
-.container {
-  @media (min-width: 1200px) {
-    padding-right: 30px;
-    padding-right: 30px;
-  }
-}

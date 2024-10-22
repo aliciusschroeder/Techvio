@@ -20,6 +20,18 @@
         padding: 10px 20px 0px;
         border-radius: 12px;
         border: 2px solid #ededed;
+
+        @media (max-width: 567px) {
+          width: 190px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        margin: 5px;
+
+        img {
+          width: 170px;
+        }
       }
 
       &:nth-of-type(1),

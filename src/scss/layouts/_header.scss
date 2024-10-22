@@ -26,6 +26,18 @@ header {
     }
   }
 
+  &.dark {
+    nav {
+      a {
+        color: black !important;
+      }
+    }
+
+    .toggler-icon {
+      background-color: black !important;
+    }
+  }
+
   nav {
     .container {
       position: relative;
