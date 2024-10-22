@@ -5,11 +5,12 @@ emailjs.init("2sZoD0Sa-NFwPO-2q");
 
 const btn = document.getElementById("button");
 const form = document.getElementById("contactForm");
+const sentMess = document.querySelector(".sent");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-
-  btn.innerText = "Sending..."; // Show a sending state on the button
+  let btnVal = btn.innerText;
+  btn.innerText = "Sending...";
 
   const serviceID = "service_ys8nks8"; //? Your EmailJS service ID
   const templateID = "template_e57p2pc"; //? Your EmailJS template ID
@@ -17,8 +18,8 @@ form.addEventListener("submit", function (event) {
   // !Send the form data using EmailJS
   emailjs.sendForm(serviceID, templateID, this).then(
     () => {
-      btn.innerText = "Send Message"; // Reset the button value
-      alert("Sent!"); // Show success alert
+      btn.innerText = btnVal;
+      sentMess.classList.add("active");
 
       //TODO: Clear the form fields
       form.reset();

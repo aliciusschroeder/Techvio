@@ -117,17 +117,25 @@
     margin-top: 30px;
     margin-bottom: 0;
 
-    .owl-dot span {
-      width: 10px;
-      height: 10px;
-      border-radius: 30px;
-      background-color: #ccc;
-      transition: 0.4s;
-      margin: 0 4px;
-
-      &:hover,
+    .owl-dot {
+      span {
+        width: 10px;
+        height: 10px;
+        border-radius: 30px;
+        background-color: #ddd;
+        transition: 0.4s;
+        margin: 0 4px;
+      }
       &.active {
-        background-color: $star-color;
+        span {
+          background-color: $star-color;
+        }
+      }
+
+      &:hover {
+        span {
+          background-color: #ccc;
+        }
       }
     }
   }

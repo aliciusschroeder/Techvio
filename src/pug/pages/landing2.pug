@@ -1,11 +1,59 @@
 extends ../layouts/layout
 
 block main
+  include ../blocks/landing2
   include ../blocks/services2
+  section.company
+    .container
+      .row
+        .col-lg-6.col-md-12.col-sm-12.data
+          h2 About Our Company
+          h3 Providing Your Business With A Quality IT Service is Our Passion
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          button.default-btn
+            a(href="about.html") Learn More
+            span
+        .col-lg-6.col-md-12.col-sm-12.photo
+          div: img(src="assets/images/about-2.png" alt="")
   include ../blocks/portfolio
+  include ../blocks/step-work
   include ../blocks/subscribe
   include ../blocks/testimonial
-  include ../blocks/step-work
+  section.faqs
+    .container 
+      .row
+        .col-lg-6.col-md-12.col-sm-12.photo
+          div: img(src="assets/images/faq.png" alt="")
+        .col-lg-6.col-md-12.col-sm-12.title
+          .head
+            h2 Faqs
+            p Short Faqs
+            div.faq-item
+              h3.faq-question.flex-between.active
+                .data How long does a website redesign take?
+                span: i.fas.fa-minus
+              div.faq-answer
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat officia deserunt mollit anim laborum
+            div.faq-item
+              h3.faq-question.flex-between 
+                .data What happens if my site breaks?
+                span: i.fas.fa-plus
+              div.faq-answer
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat officia deserunt mollit anim laborum
+            div.faq-item
+              h3.faq-question.flex-between 
+                .data Can you handle ongoing maintenance?
+                span: i.fas.fa-plus
+              div.faq-answer
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat officia deserunt mollit anim laborum
+            div.faq-item
+              h3.faq-question.flex-between 
+                .data Do you only create WordPress websites?
+                span: i.fas.fa-plus
+              div.faq-answer
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat officia deserunt mollit anim laborum
   include ../blocks/subscribe2
   include ../blocks/blog
   include ../blocks/customers

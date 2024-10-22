@@ -3,7 +3,8 @@
 @use "../utilities/colors" as *;
 @use "../utilities/times" as *;
 
-.about-company {
+.about-company,
+.company {
   padding: 100px 15px;
   background-color: $bg-color;
 
@@ -25,6 +26,10 @@
       line-height: 1.4;
       color: black;
       margin-bottom: 20px;
+
+      @media (max-width: 767px) {
+        font-size: 32px;
+      }
     }
 
     p {

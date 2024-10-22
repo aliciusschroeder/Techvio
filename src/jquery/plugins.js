@@ -38,6 +38,21 @@ $(() => {
     speed: 400,
     scale: 1.1,
   });
+
+  // !FAQ Setion Initially hide all answers except the first one
+  $(".faq-answer").not(":first").slideUp();
+  $(".faq-question").on("click", function () {
+    $(".faq-question").removeClass("active");
+    $(this).addClass("active");
+    $(this).find("svg").toggleClass("fa-plus fa-minus");
+    $(this).next(".faq-answer").slideToggle(500);
+    $(".faq-answer").not($(this).next()).slideUp(500);
+    $(".faq-question")
+      .not($(this))
+      .find("svg")
+      .removeClass("fa-minus")
+      .addClass("fa-plus");
+  });
 });
 
 $(".testimonial-slider").owlCarousel({

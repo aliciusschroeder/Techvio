@@ -447,6 +447,11 @@
     color: $font-color;
   }
 
+  .links {
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
   .tag,
   .link {
     margin-top: 20px;
@@ -485,6 +490,10 @@
   }
 
   .link {
+    @media (max-width: 767px) {
+      display: block;
+    }
+
     h4 {
       margin-right: 10px;
     }

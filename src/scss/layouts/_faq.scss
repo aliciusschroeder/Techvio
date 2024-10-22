@@ -1,0 +1,144 @@
+/** @format */
+
+@use "../utilities/colors" as *;
+@use "../utilities/times" as *;
+
+.faq {
+  padding: 100px 0;
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  .container {
+    @media (min-width: 1400px) {
+      padding: 0 130px;
+    }
+
+    .faqq {
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      overflow: hidden;
+
+      .faq-item {
+        &:not(:last-of-type) {
+          border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+          padding: 20px 15px 15px;
+          transition: $transition3;
+          cursor: pointer;
+
+          .data {
+            font: {
+              size: 18px;
+              weight: 550;
+              family: "Catamaran", serif;
+            }
+          }
+
+          span {
+            font: {
+              size: 14px;
+              weight: 550;
+            }
+          }
+
+          &.active {
+            background-color: $main-color;
+            color: white;
+          }
+        }
+        .faq-answer {
+          padding: 20px 25px;
+          line-height: 1.6;
+
+          p {
+            padding: 0;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.faqs {
+  padding: 100px 0;
+  background-color: $bg-color;
+
+  @media (max-width: 767px) {
+    padding: 60px 0;
+  }
+
+  .photo {
+    div {
+      max-width: 620px;
+
+      @media (max-width: 992px) {
+        max-width: 800px;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+
+        @media (max-width: 1200px) {
+          margin-top: 45px;
+        }
+      }
+    }
+  }
+
+  .title {
+    .head {
+      padding: 0;
+      text-align: left;
+
+      @media (max-width: 767px) {
+        margin-top: 30px;
+      }
+    }
+
+    .faq-question {
+      cursor: pointer;
+      margin-top: 30px;
+      color: black;
+
+      .data {
+        font: {
+          size: 18px;
+          weight: 550;
+          family: "Catamaran", serif;
+        }
+      }
+
+      span {
+        svg {
+          font-size: 14px;
+        }
+      }
+
+      &.active {
+        color: $main-color;
+      }
+    }
+
+    .faq-answer {
+      padding: 10px 0 0;
+      line-height: 1.8;
+
+      p {
+        background-color: white;
+        padding: 15px;
+
+        font: {
+          size: 15px;
+          weight: 450;
+          family: "Catamaran", serif;
+        }
+        color: $font-color;
+      }
+    }
+  }
+}

@@ -34,6 +34,25 @@
     form {
       padding-top: 30px;
 
+      .sent {
+        display: none;
+        p {
+          width: 100%;
+          margin: 8px 15px;
+          padding: 12px 15px;
+          border-radius: 6px;
+          font: {
+            size: 17px;
+            weight: 500;
+          }
+          color: white;
+          background-color: #03b103;
+        }
+        &.active {
+          display: block;
+        }
+      }
+
       input,
       textarea {
         width: 100%;
