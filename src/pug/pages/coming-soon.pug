@@ -9,7 +9,6 @@ html(lang="en")
     include ../components/styles
     include ../components/fonts
   body
-    include ../components/preloader
     block section
     section.coming-soon 
       .container 
@@ -19,16 +18,16 @@ html(lang="en")
           input#email-input(type='email' placeholder='Enter Your Email' name='email', required, autocomplete='email')
           button(type='submit') Submit
         .bubbles 
-          .bubble.wow.fadeInUpBig(data-wow-delay=".3s")
+          .bubble.wow.fadeInUp(data-wow-delay=".3s")
             span.number#days 0
             span.name Days
-          .bubble.wow.fadeInUpBig(data-wow-delay=".5s")
+          .bubble.wow.fadeInUp(data-wow-delay=".5s")
             span.number#hours 0
             span.name Hours
-          .bubble.wow.fadeInUpBig(data-wow-delay=".7s") 
+          .bubble.wow.fadeInUp(data-wow-delay=".7s") 
             span.number#minutes 0
             span.name Minutes
-          .bubble.wow.fadeInUpBig(data-wow-delay=".9s") 
+          .bubble.wow.fadeInUp(data-wow-delay=".9s") 
             span.number#seconds 0
             span.name Seconds
         .social-icon

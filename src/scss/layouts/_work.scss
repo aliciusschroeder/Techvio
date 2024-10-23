@@ -39,11 +39,21 @@
 
     h3 {
       font: {
-        size: 16px;
+        size: 22px;
         weight: 700;
       }
       margin: {
         bottom: 10px;
+      }
+
+      @media (max-width: 1440px) {
+        font-size: 20px;
+      }
+      @media (max-width: 1200px) {
+        font-size: 16px;
+      }
+      @media (max-width: 991px) {
+        font-size: 19px;
       }
     }
 
