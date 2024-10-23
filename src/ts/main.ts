@@ -108,6 +108,7 @@ const getActiveIndex = (): number => {
   );
 };
 
+//! To Make A Traversing By Pages In Blog Right SideBar
 btns.forEach((btn, index) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();

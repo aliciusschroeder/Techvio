@@ -4,7 +4,7 @@ section.about
   .container
     .row 
       - for (var i = 0; i < aboutArr.length; ++i)
-        .col-lg-4.col-md-6.col-sm-12
+        .col-lg-4.col-md-6.col-sm-12.wow.fadeInUp(data-wow-delay=`${0.3 + i / 5}s`)
           .about-item
             img(src=`assets/images/icon/feature-icon-${i + 1}.svg`, alt="")
             h3.mt-30.mb-15= aboutArr[i].title

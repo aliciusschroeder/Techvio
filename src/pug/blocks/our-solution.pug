@@ -7,6 +7,6 @@ section.py-100.our-solution
       p We Work On
   .container
     each solution in solutions
-      span.customer.flex-center
+      span.customer.flex-center.wow.swing(data-wow-delay=".3s")
         img(src=`assets/images/technology/${solution.img}`, alt=solution.title)
         h3= solution.title

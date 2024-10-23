@@ -275,7 +275,7 @@
     }
 
     @media (max-width: 767px) {
-      font-size: 32px;
+      font-size: 36px;
       text-align: center;
     }
 
@@ -487,6 +487,8 @@
             font-weight: 700;
             margin: 20px 0;
             line-height: 1.4;
+            animation: fadeInLefts 0.8s;
+            animation-delay: 0.3s;
 
             @media only screen and (min-width: 1200px) and (max-width: 1399px) {
               font-size: 60px;
@@ -504,6 +506,8 @@
 
           p {
             color: #fff;
+            animation: fadeInRights 0.8s;
+            animation-delay: 0.3s;
             font: {
               size: 17px;
               weight: 500;
@@ -535,6 +539,8 @@
     }
 
     button {
+      animation: fadeInLefts 1s;
+      transition: all 0.4s;
       &.one {
         background-color: white !important;
         color: $main-color !important;
@@ -621,6 +627,8 @@
   .anchor {
     margin-top: 20px;
     margin-bottom: 10px;
+    animation: fadeInUps 0.8s;
+    animation-delay: 0.3s;
     a {
       svg {
         color: white;
