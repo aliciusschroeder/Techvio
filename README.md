@@ -21,6 +21,16 @@ Welcome to **Techvio**, an innovative multi-page application designed to cater t
   <img src="https://img.shields.io/github/repo-size/GziXnine/Techvio" alt="Repository Size">
 </p>
 
+## 📊 Development Time
+
+<p align="center">
+  <img src="https://wakatime.com/badge/user/5a4657fe-4994-4a36-a877-a6882bc4ec6c/project/99d447e5-a4b8-4be9-be11-148861b28e32.svg" alt="wakatime>
+    
+</p>
+
+---
+<img src="https://github.com/GziXnine/GziXnine/blob/main/images/neon.gif">
+
 <p align="center">
   <b>Landing 1</b>
 </p>
